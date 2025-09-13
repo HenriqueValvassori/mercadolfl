@@ -36,7 +36,7 @@ cadastrarBtn.addEventListener('click', async () => {
             base64Image: base64Image
         };
 
-        const response = await fetch('/.netlify/functions/produto', {
+        const response = await fetch('/produto', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(produto),
@@ -72,7 +72,7 @@ editarBtn.addEventListener('click', async () => {
         };
 
         try {
-            const response = await fetch(`/.netlify/functions/produto/${produtoEmEdicaoId}`, {
+            const response = await fetch(`/produto/${produtoEmEdicaoId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(produtoAtualizado),
@@ -93,7 +93,7 @@ editarBtn.addEventListener('click', async () => {
 excluirBtn.addEventListener('click', async () => {
     if (produtoEmEdicaoId) {
         try {
-            const response = await fetch(`/.netlify/functions/produto/${produtoEmEdicaoId}`, {
+            const response = await fetch(`/produto/${produtoEmEdicaoId}`, {
                 method: 'DELETE',
             });
             if (response.ok) {

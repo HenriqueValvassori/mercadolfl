@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function carregarProdutos(classificacao = 'todos') {
     try {
-        let url = '/.netlify/functions/produto';
+        let url = '/produto';
         if (classificacao !== 'todos') {
             url += `?classificacao=${classificacao}`;
         }
